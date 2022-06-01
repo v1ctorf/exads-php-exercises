@@ -9,21 +9,26 @@ class AsciiArray
 
     public $content;
 
+
     public function __construct()
     {
         $arrayContent = array_map(function ($charCode) {
             return chr($charCode);
         }, range(self::ASCII_CODE_COMMA,self::ASCII_CODE_PIPE));
 
-        shuffle($arrayContent);
-
         $this->content = $arrayContent;
+    }
+
+
+    public function shuffleElements()
+    {
+        shuffle($this->content);
     }
 
 
     public function getString()
     {
-        return join('',$this->content);
+        return join('', $this->content);
     }
 
 

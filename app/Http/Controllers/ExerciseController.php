@@ -32,9 +32,14 @@ class ExerciseController extends Controller
     public function solveAsciiArray()
     {
         $arrayChars = new AsciiArray();
-        $stringChars = $arrayChars->getString();
+        $arrayChars->shuffleElements();
         $arrayChars->discardRandomElement();
+        $incompleteString = $arrayChars->getString();
 
-        return view('ascii-array',compact('stringChars'));
+        $completeArray = new AsciiArray();
+        $difference = array_diff($completeArray->content, $arrayChars->content);
+        $missingCharacter = join('',$difference);
+
+        return view('ascii-array',compact(['incompleteString','missingCharacter']));
     }
 }
