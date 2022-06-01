@@ -6,7 +6,7 @@
         </style>
     </head>
     <body>
-        <h1>EXADS - {{ $exerciseNumber ?? 'PHP Exercises' }}</h1>
+    <h1><a href="{{ route('main-page') }}">EXADS</a> - {{ $exerciseNumber ?? 'PHP Exercises' }}</h1>
         {{ $slot }}
     </body>
 </html>
