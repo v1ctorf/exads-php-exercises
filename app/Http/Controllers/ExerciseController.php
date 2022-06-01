@@ -34,12 +34,37 @@ class ExerciseController extends Controller
         $arrayChars = new AsciiArray();
         $arrayChars->shuffleElements();
         $arrayChars->discardRandomElement();
+        $completeArray = new AsciiArray();
+
+        $arrayMap = [];
+
+        foreach ($completeArray->content as $char) {
+            $arrayMap[ord($char)] = 1;
+        }
+
+        foreach ($arrayChars->content as $char) {
+            unset($arrayMap[ord($char)]);
+        }
+
+        $missingCharacter = chr(array_keys($arrayMap)[0]);
         $incompleteString = $arrayChars->getString();
 
-        $completeArray = new AsciiArray();
-        $difference = array_diff($completeArray->content, $arrayChars->content);
-        $missingCharacter = join('',$difference);
-
         return view('ascii-array',compact(['incompleteString','missingCharacter']));
+    }
+
+
+    public function solveAsciiArrayWithArrayDiff()
+    {
+        $arrayChars = new AsciiArray();
+        $arrayChars->shuffleElements();
+        $arrayChars->discardRandomElement();
+        $completeArray = new AsciiArray();
+
+        $difference = array_diff($completeArray->content, $arrayChars->content);
+
+        $missingCharacter = join('',$difference);
+        $incompleteString = $arrayChars->getString();
+
+        return view('ascii-array-diff',compact(['incompleteString','missingCharacter']));
     }
 }
