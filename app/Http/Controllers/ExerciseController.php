@@ -68,4 +68,10 @@ class ExerciseController extends Controller
 
         return view('ascii-array-diff',compact(['arrayChars','missingCharacter','runtime']));
     }
+
+
+    public function solveTvSeries()
+    {
+        return view('tv-series');
+    }
 }
