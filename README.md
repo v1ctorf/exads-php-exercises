@@ -18,7 +18,7 @@ Provide the SQL scripts that create and populate the DB.
 4 - A/B Testing
 ----
 Exads would like to A/B test some promotional designs to see which provides the best conversion rate.
-Write a snippet of PHP code that redirects end users to the different designs based on the data provided by [this library](packagist.org/exads/ab-test-data).
+Write a snippet of PHP code that redirects end users to the different designs based on the data provided by [this library](https://packagist.org/exads/ab-test-data).
 The data will be structured as follows:
 ```
 “promotion” => [
