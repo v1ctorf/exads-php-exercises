@@ -51,6 +51,7 @@ class ExerciseController extends Controller
         return view('ascii-array',compact(['arrayChars','missingCharacter','runtime']));
     }
 
+
     public function solveAsciiArrayWithArrayDiff()
     {
         $arrayChars = new AsciiArray();
@@ -72,5 +73,11 @@ class ExerciseController extends Controller
     {
         // SQL scripts at resources/views/tv-series.blade.php
         return view('tv-series');
+    }
+
+
+    public function solveAbTesting()
+    {
+        return view('ab-testing');
     }
 }

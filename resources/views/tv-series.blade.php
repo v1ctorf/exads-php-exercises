@@ -10,7 +10,7 @@
     <h3>SQL Scripts</h3>
 
     <h4>Creating table tv_series</h4>
-    <textarea style="width:100%" rows="6">
+    <textarea rows="6">
     CREATE TABLE `tv_series` (
         `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
         `title` VARCHAR(255) NOT NULL,
@@ -20,7 +20,7 @@
     </textarea>
 
     <h4>Creating table tv_series_intervals</h4>
-    <textarea style="width:100%" rows="9">
+    <textarea rows="9">
     CREATE TABLE `tv_series_intervals` (
         `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
         `tv_series_id` BIGINT UNSIGNED NOT NULL,
@@ -33,7 +33,7 @@
     </textarea>
 
     <h4>Populating table tv_series</h4>
-    <textarea style="width:100%" rows="5">
+    <textarea rows="5">
     INSERT INTO tv_series (title, channel, genre)
     VALUES
         ('Breaking Bad','AMC','neo-western crime drama'),
@@ -42,7 +42,7 @@
     </textarea>
 
     <h4>Populating table tv_series_intervals</h4>
-    <textarea style="width:100%" rows="7">
+    <textarea rows="7">
     INSERT INTO tv_series_intervals (tv_series_id, show_time, week_day)
     VALUES
         (1, '22:00:00', 'wed'),

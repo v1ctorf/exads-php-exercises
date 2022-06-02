@@ -8,3 +8,4 @@ Route::get('prime-numbers', [ExerciseController::class,'solvePrimeNumbers'])->na
 Route::get('ascii-array', [ExerciseController::class,'solveAsciiArray'])->name('ascii-array');
 Route::get('ascii-array-with-diff', [ExerciseController::class,'solveAsciiArrayWithArrayDiff'])->name('ascii-array-w-diff');
 Route::get('tv-series', [ExerciseController::class,'solveTvSeries'])->name('tv-series');
+Route::get('ab-testing', [ExerciseController::class,'solveAbTesting'])->name('ab-testing');
