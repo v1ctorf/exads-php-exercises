@@ -37,7 +37,6 @@ class ExerciseController extends Controller
         $completeArray = new AsciiArray();
 
         $ts = microtime(true);
-
         $arrayMap = [];
 
         foreach ($completeArray->content as $char) {
@@ -49,12 +48,9 @@ class ExerciseController extends Controller
         }
 
         $missingCharacter = chr(array_keys($arrayMap)[0]);
-
         $runtime = number_format(microtime(true) - $ts, 6);
 
-        $incompleteString = $arrayChars->getString();
-
-        return view('ascii-array',compact(['incompleteString','missingCharacter', 'runtime']));
+        return view('ascii-array',compact(['arrayChars','missingCharacter','runtime']));
     }
 
 
@@ -66,15 +62,10 @@ class ExerciseController extends Controller
         $completeArray = new AsciiArray();
 
         $ts = microtime(true);
-
         $difference = array_diff($completeArray->content, $arrayChars->content);
-
         $missingCharacter = join('',$difference);
-
         $runtime = number_format(microtime(true) - $ts, 6);
 
-        $incompleteString = $arrayChars->getString();
-
-        return view('ascii-array-diff',compact(['incompleteString','missingCharacter','runtime']));
+        return view('ascii-array-diff',compact(['arrayChars','missingCharacter','runtime']));
     }
 }
