@@ -29,6 +29,7 @@ class ExerciseController extends Controller
     public function solveAsciiArray()
     {
         $arrayChars = new AsciiArray();
+        // class AsciiArray is at app/Models/AsciiArray.php
         $arrayChars->shuffleElements();
         $arrayChars->discardRandomElement();
         $completeArray = new AsciiArray();
@@ -50,10 +51,10 @@ class ExerciseController extends Controller
         return view('ascii-array',compact(['arrayChars','missingCharacter','runtime']));
     }
 
-
     public function solveAsciiArrayWithArrayDiff()
     {
         $arrayChars = new AsciiArray();
+        // class AsciiArray is at app/Models/AsciiArray.php
         $arrayChars->shuffleElements();
         $arrayChars->discardRandomElement();
         $completeArray = new AsciiArray();
