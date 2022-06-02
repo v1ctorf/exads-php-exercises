@@ -5,6 +5,7 @@
     <p>{{ $incompleteString }}</p>
     <h3>Missing Character</h3>
     <p>{{ $missingCharacter }}</p>
+    <small>(found in {{$runtime}} second)</small>
     <h3>Note</h3>
     <p>This exercise can be solved <a href="{{route('ascii-array-w-diff')}}">using array_diff</a>.</p>
 </x-exercise>
