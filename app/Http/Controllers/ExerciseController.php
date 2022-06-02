@@ -6,9 +6,6 @@ use App\Models\AsciiArray;
 
 class ExerciseController extends Controller
 {
-    const ASCII_CODE_COMMA = 44;
-    const ASCII_CODE_PIPE = 124;
-
     public function solvePrimeNumbers()
     {
         $numbers = [];
@@ -72,6 +69,7 @@ class ExerciseController extends Controller
 
     public function solveTvSeries()
     {
+        // SQL scripts at resources/views/tv-series.blade.php
         return view('tv-series');
     }
 }
