@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\AsciiArray;
+use Exads\ABTestData;
+use Illuminate\Http\Request;
 
 class ExerciseController extends Controller
 {
@@ -50,7 +52,7 @@ class ExerciseController extends Controller
 
         return view('ascii-array',compact(['arrayChars','missingCharacter','runtime']));
     }
-    
+
 
 
     public function solveAsciiArrayWithArrayDiff()
@@ -78,7 +80,30 @@ class ExerciseController extends Controller
 
 
     public function solveAbTesting()
-    {
+    {          
         return view('ab-testing');
+    }
+
+
+    public function getPromotion(int $promoId)
+    {   
+        try {
+            $abTest = new ABTestData($promoId);
+        } catch(\Exception $e) {
+            abort(404);
+        }        
+        
+        $promotion = $abTest->getPromotionName();
+        $designs = $abTest->getAllDesigns();
+
+        $design = array_map(function ($item) {
+            if ($item['designId'] == 2) {                
+                return $item;
+            }
+        }, $designs);
+        
+        $design = array_values(array_filter($design))[0];
+        
+        return view('promotion', compact(['promotion','design']));
     }
 }
