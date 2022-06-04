@@ -1,6 +1,6 @@
 <x-exercise>
     <h2>A/B Testing</h2>
-    <p>Exads would like to A/B test some promotional designs to see which provides the best conversion rate. Write a snippet of PHP code that redirects end users to the different designs based on the data provided by this library. The data will be structured as follows:</p>
+    <p>Exads would like to A/B test some promotional designs to see which provides the best conversion rate. Write a snippet of PHP code that redirects end users to the different designs based on the data provided by <a href="https://packagist.org/packages/exads/ab-test-data">this library</a>. The data will be structured as follows:</p>
     <textarea rows="9">
     “promotion” => [
         “id” => 1,
