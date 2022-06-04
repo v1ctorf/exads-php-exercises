@@ -50,6 +50,7 @@ class ExerciseController extends Controller
 
         return view('ascii-array',compact(['arrayChars','missingCharacter','runtime']));
     }
+    
 
     public function solveAsciiArrayWithArrayDiff()
     {
