@@ -12,7 +12,7 @@ class ExerciseController extends Controller
     {
         $numbers = [];
 
-        foreach (range(1,100) as $number) {
+        foreach (range(1, 100) as $number) {
             $multipleOf = [];
 
             foreach (range(2, $number) as $value) {
@@ -95,13 +95,17 @@ class ExerciseController extends Controller
         
         $promotion = $abTest->getPromotionName();
         $designs = $abTest->getAllDesigns();
+        $total = 0;
+        $rand = rand(1,99);
 
-        $design = array_map(function ($item) {
-            if ($item['designId'] == 2) {                
-                return $item;
-            }
+        $design = array_map(function ($item) use (&$total, $rand) {            
+            $total += $item['splitPercent'];
+            
+            if ($total > $rand) {
+                return $item;                
+            } 
         }, $designs);
-        
+
         $design = array_values(array_filter($design))[0];
         
         return view('promotion', compact(['promotion','design']));
