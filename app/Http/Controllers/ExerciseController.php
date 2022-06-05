@@ -95,6 +95,7 @@ class ExerciseController extends Controller
         
         $promotion = $abTest->getPromotionName();
         $designs = $abTest->getAllDesigns();
+        
         $total = 0;
         $rand = rand(1,99);
 
